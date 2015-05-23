@@ -7,7 +7,8 @@ var fail = function(response) {
 
 var dataFile = function() {
   // TODO write a function to translate the id into a file path
-  var file = "/var/www/test/word.zip";
+  var rootFolder = process.env.PWD;
+  var file = rootFolder + "/private/sample.zip";
   // var file = fileFromId(this.params.id);
 
   // Attempt to read the file size
@@ -19,7 +20,7 @@ var dataFile = function() {
   }
 
   // The hard-coded attachment filename
-  var attachmentFilename = 'filename-for-user.zip';
+  var attachmentFilename = 'filename-for-downloaded-file.zip';
 
   // Set the headers
   this.response.writeHead(200, {
